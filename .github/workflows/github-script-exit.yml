@@ -13,13 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Github Scripts with exit code
+        uses: actions/github-script@v6
         with:
           result-encoding: string
           script: |
             console.log('hello');
             return -1
             console.log('world')
-      - name: Github Scripts without exit
+      - name: Github Scripts without exit code
+        uses: actions/github-script@v6
         with:
           result-encoding: string
           script: |
