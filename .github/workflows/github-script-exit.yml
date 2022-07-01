@@ -17,12 +17,12 @@ jobs:
         with:
           result-encoding: string
           script: |
-            console.log('hello');
-            return -1
+            console.log('hello')
+            throw 'error'
             console.log('world')
       - name: Github Scripts without exit code
         uses: actions/github-script@v6
         with:
           result-encoding: string
           script: |
-            console.log('hoge');
+            console.log('hoge')
