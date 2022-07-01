@@ -1,0 +1,25 @@
+name: GitHub Scripts Exit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run:
+    name: run
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Github Scripts with exit code
+        with:
+          result-encoding: string
+          script: |
+            console.log('hello');
+            return -1
+            console.log('world')
+      - name: Github Scripts without exit
+        with:
+          result-encoding: string
+          script: |
+            console.log('hoge');
