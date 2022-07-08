@@ -5,6 +5,9 @@ on:
     branches:
       - github-actions-timezone
 
+env:
+  TZ: 'Asia/Tokyo'
+
 jobs:
   run:
     name: run
