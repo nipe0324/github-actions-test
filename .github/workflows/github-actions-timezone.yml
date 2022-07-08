@@ -1,0 +1,19 @@
+name: GitHub Actions Timezone
+
+on:
+  push:
+    branches:
+      - github-actions-timezone
+
+jobs:
+  run:
+    name: run
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: print Timezone
+        run: echo `date`
+      - name: print Timezone with TZ env
+        env:
+          TZ: "Asia/Tokyo"
+        run: echo `date`
